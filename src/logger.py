@@ -2,21 +2,33 @@ import logging
 import os
 from datetime import datetime
 
-# Log file name based on current date and time
-LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+# ==========================================================
+# Create Logs Directory
+# ==========================================================
 
-# Create logs directory
-logs_path = os.path.join(os.getcwd(), "logs")
-os.makedirs(logs_path, exist_ok=True)
+# Root directory of the project
+LOG_DIR = "logs"
 
-# Complete log file path
-LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
+# Create the logs folder if it doesn't exist
+os.makedirs(LOG_DIR, exist_ok=True)
 
-# Configure logging
+# Create a log file with current date and time
+LOG_FILE = f"{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+
+LOG_FILE_PATH = os.path.join(LOG_DIR, LOG_FILE)
+
+# ==========================================================
+# Configure Logger
+# ==========================================================
+
 logging.basicConfig(
+
     filename=LOG_FILE_PATH,
-    format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO,
+
+    format="[ %(asctime)s ] %(levelname)s - %(name)s - %(message)s",
+
+    level=logging.INFO
 )
 
-
+# Create a logger object
+logger = logging.getLogger(__name__)
