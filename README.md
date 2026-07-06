@@ -8,7 +8,8 @@ This project demonstrates the complete machine learning lifecycle, from data pre
 
 ## 🚀 Live Demo
 
-> **Coming Soon** (Deploy on Render / Railway)
+🌐 **Live Website:**  
+https://student-performance-predictor-8et9.onrender.com/
 
 ---
 
