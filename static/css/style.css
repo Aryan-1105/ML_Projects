@@ -1,12 +1,12 @@
-/* ==========================================================
-   Google Font
-========================================================== */
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ==========================================================
-   Global
-========================================================== */
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -15,225 +15,271 @@
     font-family:'Poppins',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
 
     min-height:100vh;
 
-    background:linear-gradient(
-        135deg,
-        #5B21B6,
-        #2563EB,
-        #06B6D4
-    );
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
 
-    background-size:300% 300%;
+    background-size:400% 400%;
 
-    animation:gradientAnimation 15s ease infinite;
+    animation:gradientMove 12s ease infinite;
 
-}
+    display:flex;
 
-/* ==========================================================
-   Animated Background
-========================================================== */
+    justify-content:center;
 
-@keyframes gradientAnimation{
+    align-items:center;
 
-    0%{
-        background-position:0% 50%;
-    }
+    color:#fff;
 
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
+    overflow-x:hidden;
 
 }
 
-/* ==========================================================
-   Glass Card
-========================================================== */
+/* =====================================================
+   BACKGROUND ANIMATION
+===================================================== */
+
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+    padding:25px;
+
+}
+
+/* =====================================================
+   GLASS CARD
+===================================================== */
 
 .glass-card{
 
-    background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
 
     backdrop-filter:blur(18px);
 
-    border-radius:20px;
+    border-radius:25px;
 
-    border:1px solid rgba(255,255,255,.25);
+    padding:40px;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.2);
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
 
 }
 
-/* ==========================================================
-   Heading
-========================================================== */
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+    width:90px;
+
+    transition:.4s;
+
+}
+
+.logo:hover{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
 
 .main-title{
 
-    font-size:2.4rem;
+    font-size:2.8rem;
 
     font-weight:700;
 
-    color:white;
+    color:#fff;
+
+    margin-top:15px;
+
+    letter-spacing:.5px;
+
+}
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-img{
+
+    max-width:100%;
+
+    width:360px;
+
+    animation:floatImage 4s ease-in-out infinite;
 
 }
 
-.subtitle{
+@keyframes floatImage{
 
-    color:white;
+    0%{
+        transform:translateY(0px);
+    }
 
-    opacity:.9;
+    50%{
+        transform:translateY(-12px);
+    }
 
-}
-
-/* ==========================================================
-   Labels
-========================================================== */
-
-.form-label{
-
-    font-weight:600;
-
-    color:#ffffff;
+    100%{
+        transform:translateY(0px);
+    }
 
 }
 
-/* ==========================================================
-   Inputs
-========================================================== */
+/* =====================================================
+   FEATURE BOXES
+===================================================== */
 
-.form-control,
-.form-select{
+.feature-box{
 
-    border-radius:12px;
+    display:flex;
 
-    border:none;
+    align-items:flex-start;
 
-    padding:12px;
+    gap:18px;
 
-}
+    background:rgba(255,255,255,.08);
 
-.form-control:focus,
-.form-select:focus{
+    border:1px solid rgba(255,255,255,.12);
 
-    box-shadow:0 0 0 .25rem rgba(255,255,255,.25);
+    border-radius:18px;
 
-}
+    padding:18px;
 
-/* ==========================================================
-   Button
-========================================================== */
-
-.predict-btn{
-
-    background:#00C853;
-
-    border:none;
-
-    color:white;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    border-radius:15px;
+    margin-bottom:18px;
 
     transition:.35s;
 
-    padding:14px;
+}
+
+.feature-box:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.15);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+
+}
+
+.feature-icon{
+
+    font-size:2rem;
+
+    flex-shrink:0;
+
+}
+
+.feature-box h4{
+
+    color:#fff;
+
+    font-size:1.25rem;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.feature-box p{
+
+    color:rgba(255,255,255,.82);
+
+    font-size:.95rem;
+
+    line-height:1.6;
+
+    margin:0;
+
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.predict-btn{
+
+    background:#2563eb;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px 40px;
+
+    font-size:1.05rem;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.45);
 
 }
 
 .predict-btn:hover{
 
-    transform:translateY(-3px);
+    background:#1d4ed8;
 
-    background:#00E676;
+    color:#fff;
 
-    box-shadow:0 15px 30px rgba(0,0,0,.3);
+    transform:translateY(-4px);
 
-}
-
-/* ==========================================================
-   Result Card
-========================================================== */
-
-.result-card{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:25px;
-
-    text-align:center;
-
-    margin-top:30px;
-
-    animation:fadeUp .6s ease;
+    box-shadow:0 16px 35px rgba(37,99,235,.6);
 
 }
 
-.result-score{
-
-    font-size:3rem;
-
-    font-weight:700;
-
-    color:#2563EB;
-
-}
-
-.performance{
-
-    font-size:1.2rem;
-
-    font-weight:600;
-
-}
-
-/* ==========================================================
-   Animation
-========================================================== */
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(30px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ==========================================================
-   Footer
-========================================================== */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer{
 
-    color:white;
+    margin-top:25px;
 
     text-align:center;
 
-    margin-top:40px;
+    color:rgba(255,255,255,.8);
 
-    opacity:.85;
+}
+
+.footer p{
+
+    margin:3px 0;
+
+    font-size:.92rem;
 
 }

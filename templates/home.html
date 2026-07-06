@@ -9,6 +9,9 @@
           content="width=device-width, initial-scale=1.0">
 
     <title>Predict Mathematics Score</title>
+    <link rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}">
 
     <!-- Bootstrap -->
 
@@ -41,11 +44,16 @@
 
                 <div class="text-center mb-4">
 
-                    <h1 class="main-title">
+                <img src="{{ url_for('static', filename='images/logo.png') }}"
+                    width="120"
+                    class="mb-3"
+                    alt="Logo">
+                    
+                <h1 class="main-title">
 
-                        🎓 Student Performance Predictor
+                    Student Performance Predictor
 
-                    </h1>
+                </h1>
 
                     <p class="subtitle">
 
